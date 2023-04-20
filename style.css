@@ -72,7 +72,7 @@ img:hover {
   filter: grayscale(0%);
   scale: 1.5;
 }
-@media (width<=376px) {
+@media (width<=380px) {
   .section {
     columns: 2;
   }
