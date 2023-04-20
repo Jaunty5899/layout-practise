@@ -36,10 +36,12 @@
   background-color: rgb(48, 57, 48);
   gap: 10px;
   padding: 10px 10px;
-  display: flex;
-  flex-wrap: wrap;
+  columns: 3;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
 }
 .image {
+  margin-bottom: 10px;
   overflow: hidden;
   border-radius: 5px;
   background-color: aqua;
