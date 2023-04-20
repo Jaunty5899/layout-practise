@@ -1,0 +1,72 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.container {
+  margin: auto;
+  display: flex;
+  background-color: blue;
+  flex-direction: column;
+  max-width: 700px;
+}
+.navbar {
+  background-color: rgb(20, 20, 20);
+  height: 80px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar::before {
+  content: "";
+  background-color: chartreuse;
+  width: 50px;
+  height: 50px;
+}
+.menu {
+  flex-grow: 0.5;
+  display: flex;
+  background-color: cadetblue;
+  list-style-type: none;
+  justify-content: space-around;
+  padding: 10px 5px;
+}
+
+.section {
+  background-color: rgb(48, 57, 48);
+  gap: 10px;
+  padding: 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.image {
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  break-inside: avoid;
+  word-break: break-all;
+  flex-basis: 200px;
+  height: min-content;
+  flex-grow: 1;
+}
+.image > div {
+  overflow: hidden;
+}
+.image > h2 {
+  word-break: normal;
+}
+:is(h2, span) {
+  padding: 0px 15px 15px 15px;
+}
+img {
+  width: 100%;
+  filter: grayscale(100%);
+  transition: all 0.1s ease-in-out;
+}
+img:hover {
+  filter: grayscale(0%);
+  scale: 1.5;
+}
