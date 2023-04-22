@@ -7,7 +7,7 @@
   display: flex;
   background-color: blue;
   flex-direction: column;
-  max-width: 700px;
+  max-width: 1000px;
 }
 .navbar {
   background-color: rgb(20, 20, 20);
@@ -36,7 +36,7 @@
   background-color: rgb(48, 57, 48);
   gap: 10px;
   padding: 10px 10px;
-  columns: 3;
+  columns: 4;
   /* display: flex; */
   /* flex-wrap: wrap; */
 }
@@ -48,11 +48,8 @@
   display: flex;
   flex-direction: column;
   text-align: justify;
-  break-inside: avoid;
+  /* break-inside: avoid; */
   word-break: break-all;
-  flex-basis: 200px;
-  height: min-content;
-  flex-grow: 1;
 }
 .image > div {
   overflow: hidden;
@@ -67,13 +64,67 @@ img {
   width: 100%;
   filter: grayscale(100%);
   transition: all 0.1s ease-in-out;
+  transform-origin: bottom;
 }
 img:hover {
   filter: grayscale(0%);
   scale: 1.5;
 }
-@media (width<=380px) {
+@media (width<811px) {
+  .section {
+    columns: 3;
+  }
+}
+@media (width<411px) {
   .section {
     columns: 2;
   }
+}
+
+.s-contain {
+  width: 30px;
+  height: 15px;
+  border: 1px solid white;
+  display: flex;
+  border-radius: 10px;
+}
+.switch-a {
+  width: 50%;
+  height: inherit;
+  background-color: green;
+  border-radius: 10px;
+}
+.switch-b {
+  width: 50%;
+  height: inherit;
+  background-color: green;
+  border-radius: 10px;
+}
+.animA {
+  animation: grow 0.25s linear forwards;
+}
+.animB {
+  animation: shrink 0.25s linear forwards;
+}
+@keyframes grow {
+  0% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes shrink {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+.hide {
+  display: none;
+}
+.toRight {
+  justify-content: flex-end;
 }
