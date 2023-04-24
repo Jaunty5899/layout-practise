@@ -1,11 +1,11 @@
 * {
   padding: 0px;
   margin: 0px;
+  font-family: "Roboto Condensed";
 }
 .container {
   margin: auto;
   display: flex;
-  background-color: blue;
   flex-direction: column;
   max-width: 1000px;
 }
@@ -18,10 +18,10 @@
   justify-content: space-between;
 }
 .navbar::before {
-  content: "";
-  background-color: chartreuse;
-  width: 50px;
-  height: 50px;
+  content: "Hello World";
+  color: white;
+  font-weight: 700;
+  font-size: xx-large;
 }
 .menu {
   flex-grow: 0.5;
@@ -36,7 +36,7 @@
   background-color: rgb(48, 57, 48);
   gap: 10px;
   padding: 10px 10px;
-  columns: 4;
+  columns: 5;
   /* display: flex; */
   /* flex-wrap: wrap; */
 }
@@ -44,31 +44,33 @@
   margin-bottom: 10px;
   overflow: hidden;
   border-radius: 5px;
-  background-color: aqua;
+  background-color: rgb(20, 20, 20);
   display: flex;
   flex-direction: column;
   text-align: justify;
   /* break-inside: avoid; */
   word-break: break-all;
+  color: white;
 }
 .image > div {
+  height: 300px;
   overflow: hidden;
+  margin-bottom: 15px;
 }
 .image > h2 {
   word-break: normal;
 }
 :is(h2, span) {
-  padding: 0px 15px 15px 15px;
+  margin: 0px 15px 15px 15px;
 }
 img {
-  width: 100%;
-  filter: grayscale(100%);
+  filter: blur(3px);
   transition: all 0.1s ease-in-out;
-  transform-origin: bottom;
+  /* transform-origin: top; */
 }
 img:hover {
   filter: grayscale(0%);
-  scale: 1.5;
+  scale: 1.2;
 }
 @media (width<811px) {
   .section {
@@ -79,52 +81,37 @@ img:hover {
   .section {
     columns: 2;
   }
+  .navbar::before {
+    font-size: x-large;
+  }
 }
 
 .s-contain {
   width: 30px;
   height: 15px;
-  border: 1px solid white;
+  border: 2px solid cadetblue;
   display: flex;
-  border-radius: 10px;
+  scale: 1.3;
+  border-radius: 20px;
 }
-.switch-a {
+.switch {
   width: 50%;
-  height: inherit;
-  background-color: green;
-  border-radius: 10px;
+  background-color: cadetblue;
+  border-radius: inherit;
+  transition: translate 0.2s ease-in-out;
 }
-.switch-b {
-  width: 50%;
-  height: inherit;
-  background-color: green;
-  border-radius: 10px;
+.translate-X {
+  translate: 100% 0%;
 }
-.animA {
-  animation: grow 0.25s linear forwards;
+.skeleton {
+  opacity: 0.7;
+  animation: skeleton-img 1s linear infinite alternate;
 }
-.animB {
-  animation: shrink 0.25s linear forwards;
-}
-@keyframes grow {
+@keyframes skeleton-img {
   0% {
-    width: 50%;
+    background-color: rgb(110, 109, 109);
   }
   100% {
-    width: 100%;
+    background-color: darkgrey;
   }
-}
-@keyframes shrink {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 50%;
-  }
-}
-.hide {
-  display: none;
-}
-.toRight {
-  justify-content: flex-end;
 }
