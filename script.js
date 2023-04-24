@@ -4,13 +4,16 @@ const imageBg = document.querySelectorAll(".image");
 const switchContain = document.querySelector(".s-contain");
 const navBefore = document.querySelector(".navbar");
 
-const tog_check = () => {
-  let tog_state = document.body.classList.contains("dark") ? "dark" : "bright";
-  localStorage.setItem("scheme", tog_state);
+const tog_update = () => {
+  localStorage.setItem(
+    "scheme",
+    document.body.classList.contains("dark") ? "dark" : "bright"
+  );
 };
 
 const darkMode = () => {
   let sColor;
+  switchA.classList.toggle("translate-X");
 
   menuUlBg.classList.toggle("bright");
 
@@ -25,13 +28,15 @@ const darkMode = () => {
   });
   document.body.classList.toggle("dark");
   navBefore.style.color = sColor;
-  tog_check();
+  tog_update();
 };
 
-tog_check();
-
 switchA.addEventListener("click", () => {
-  switchA.classList.toggle("translate-X");
-
   darkMode();
 });
+const set_switch_pos = () => {
+  if (localStorage.getItem("scheme") == "dark") {
+    darkMode();
+  }
+};
+set_switch_pos();
