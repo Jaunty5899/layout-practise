@@ -107,10 +107,11 @@ img:hover {
   height: 100%;
   background-color: var(--dark);
   border-radius: inherit;
+  translate: -1% 0%;
   transition: translate 0.2s ease-in-out;
 }
 .translate-X {
-  translate: 100% 0%;
+  translate: 102% 0%;
 }
 .skeleton {
   /* opacity: 0.5; */
