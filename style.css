@@ -108,11 +108,12 @@ img:hover {
   width: 50%;
   background-color: var(--dark);
   border-radius: 100%;
-  translate: -2% 0%;
+  translate: 0% 0%;
+  scale: 1.1 1.1;
   transition: translate 0.2s ease-in-out;
 }
 .translate-X {
-  translate: 102% 0%;
+  translate: 100% 0%;
 }
 .skeleton {
   /* opacity: 0.5; */
