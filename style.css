@@ -7,6 +7,9 @@
   margin: 0px;
   font-family: "Roboto Condensed";
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: var(--bright);
   color: var(--bright);
@@ -18,7 +21,31 @@ body {
   flex-direction: column;
   --max-width: 1000px;
   max-width: var(--max-width);
-  justify-self: center;
+  position: relative;
+}
+.toTop {
+  position: fixed;
+  width: 3.2em;
+  height: 3.2em;
+  background-color: rgba(255, 255, 255);
+  border-radius: 50%;
+  bottom: 2vw;
+  right: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: screen;
+}
+.toTop::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: url(arrowUp.svg);
+}
+li a {
+  color: var(--bright);
+  text-decoration: none;
+  font-weight: 700;
 }
 .navbar {
   color: var(--dark);
@@ -45,14 +72,14 @@ body {
   transition: background-color 0.5s linear;
 }
 .section {
-  padding: 10px 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  gap: 10px;
+  padding-bottom: 10px;
+  justify-content: center;
 }
 .image {
   flex-basis: 188px;
-  margin-bottom: 10px;
   overflow: hidden;
   border-radius: 5px;
   background-color: var(--dark);
@@ -80,23 +107,24 @@ body {
   overflow: hidden;
   --max-lines: 4;
   line-height: 1em; /*1em==16px*/
-  height: calc(var(--max-lines) * 1em);
+  max-height: calc(var(--max-lines) * 1em);
 }
 .image::before {
   position: absolute;
   content: "";
   width: 100%;
-  height: 60px;
-  background: linear-gradient(0deg, var(--bright) 30%, rgba(0, 0, 0, 0) 100%);
+  height: 40px;
+  background: linear-gradient(0deg, var(--dark) 30%, rgba(0, 0, 0, 0) 100%);
   bottom: 0px;
+  pointer-events: none;
 }
-img {
+.image img {
   filter: blur(3px);
   transition: all 0.1s ease-in-out;
-  /* transform-origin: top; */
+  transform-origin: bottom;
 }
-img:hover {
-  filter: grayscale(0%);
+.image img:hover {
+  filter: blur(0px);
   scale: 1.2;
 }
 
@@ -104,7 +132,7 @@ img:hover {
   width: 30px;
   height: 15px;
   border: 2px solid var(--dark);
-  scale: 1.3;
+  /* scale: 1.3; */
   display: flex;
   border-radius: 20px;
 }
@@ -113,7 +141,7 @@ img:hover {
   background-color: var(--dark);
   border-radius: 100%;
   translate: 0% 0%;
-  scale: 1.1 1.1;
+  scale: 1.1;
   transition: translate 0.2s ease-in-out;
 }
 .translate-X {
@@ -140,6 +168,12 @@ img:hover {
   color: var(--bright);
 }
 
+@media (wdith<811px) {
+  .toTop {
+    right: 5vw;
+  }
+}
+
 @media (width<411px) {
   .image {
     flex-basis: 45vw;
@@ -152,5 +186,8 @@ img:hover {
   }
   .image > span {
     font-size: medium;
+  }
+  .toTop {
+    right: 5vw;
   }
 }

@@ -3,6 +3,7 @@ const menuUlBg = document.querySelector(".menu");
 const imageBg = document.querySelectorAll(".image");
 const switchContain = document.querySelector(".s-contain");
 const navBefore = document.querySelector(".navbar");
+const imgSpan = document.querySelectorAll(".image span");
 
 const tog_update = () => {
   localStorage.setItem(
@@ -39,4 +40,15 @@ const set_switch_pos = () => {
     darkMode();
   }
 };
+
 set_switch_pos();
+
+imgSpan.forEach((e) => {
+  e.addEventListener("click", () => {
+    let init = "calc(var(--max-lines) * 1em)";
+    if (e.style.maxHeight == "none") e.style.maxHeight = init;
+    else {
+      e.style.maxHeight = "none";
+    }
+  });
+});
