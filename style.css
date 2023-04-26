@@ -168,7 +168,7 @@ li a {
   color: var(--bright);
 }
 
-@media (wdith<811px) {
+@media (width<811px) {
   .toTop {
     right: 5vw;
   }
@@ -186,8 +186,5 @@ li a {
   }
   .image > span {
     font-size: medium;
-  }
-  .toTop {
-    right: 5vw;
   }
 }
