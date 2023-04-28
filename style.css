@@ -8,6 +8,7 @@
   font-family: "Roboto Condensed";
 }
 html {
+  scroll-snap-type: y proximity;
   scroll-behavior: smooth;
 }
 body {
@@ -22,6 +23,9 @@ body {
   --max-width: 1000px;
   max-width: var(--max-width);
   position: relative;
+}
+.container div {
+  scroll-snap-align: start;
 }
 .toTop {
   position: fixed;
@@ -92,7 +96,8 @@ li a {
   text-align: justify;
   break-inside: avoid;
   word-break: break-all;
-  transition: all 0.5s linear;
+  transition: all 0.2s linear;
+  transform-origin: top;
   position: relative;
 }
 .image > div {
@@ -113,6 +118,7 @@ li a {
   line-height: 1em; /*1em==16px*/
   max-height: calc(var(--max-lines) * 1em);
 }
+
 .image::before {
   position: absolute;
   content: "";
